@@ -18,11 +18,7 @@ public class DinnerDbContext :  DbContext {
         modelBuilder
             .ApplyConfigurationsFromAssembly(typeof(DinnerDbContext).Assembly);
 
-        // modelBuilder.Model.GetEntityTypes()
-        // .SelectMany(e => e.GetProperties())
-        // .Where(p => p.IsPrimaryKey())
-        // .ToList()
-        // .ForEach(p => p.ValueGenerated = ValueGenerated.Never);
+      
 
         base.OnModelCreating(modelBuilder); 
     }     
