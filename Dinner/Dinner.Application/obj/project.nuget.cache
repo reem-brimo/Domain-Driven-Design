@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "j6myEx3eCIk/xnh6cfnp5+krNHrTEK4D1rFO0i1TuTJUogCdbz2ghBizU/KZoWH8gyN3n/nwpCbPNSa1F4Lh+Q==",
+  "success": true,
+  "projectFilePath": "G:\\workspace\\DDD\\Dinner\\Dinner.Application\\Dinner.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\reemb\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.0.0\\mediatr.12.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.0\\mediatr.contracts.2.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

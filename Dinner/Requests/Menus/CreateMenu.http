@@ -1,0 +1,25 @@
+@host = https://localhost:7126
+
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmYTdmZTZkOC04MmI5LTQyNjMtYjFmYS03NDQxYmU5OTAxN2YiLCJnaXZlbl9uYW1lIjoiciIsImZhbWlseV9uYW1lIjoiYnJpIiwianRpIjoiYzk3MWQ1NzUtYjJiNS00MDY4LWI1N2EtN2I1ZmE3ZWQ2NjQ0IiwiZXhwIjoxNzAyNDcwODM1LCJpc3MiOiJEaW5uZXIiLCJhdWQiOiJEaW5uZXIifQ.f_pG1sP0Y6xWCVdo1pr-wwB2OdTsTpoqQjCWT1DelyE
+@hostId =asdf
+
+POST   {{host}}/hosts/{{hostId}}/menus
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "Name" : "New Menu",
+   "Description" : "This menu is for Lunch",
+   "Sections" : [{   
+    "Name" : "Appetizers",
+    "Description" : "Starters",
+    "Items" : [{
+        "Name": "Chicken Wings",
+        "Description": "appetizer"
+        }]
+}]
+
+}
+
+###another request
+

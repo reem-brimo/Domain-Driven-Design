@@ -1,0 +1,12 @@
+G:\workspace\DDD\Dinner\Dinner.Contracts\bin\Debug\net6.0\Dinner.Contracts.deps.json
+G:\workspace\DDD\Dinner\Dinner.Contracts\bin\Debug\net6.0\Dinner.Contracts.dll
+G:\workspace\DDD\Dinner\Dinner.Contracts\bin\Debug\net6.0\Dinner.Contracts.pdb
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.csproj.AssemblyReference.cache
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.AssemblyInfoInputs.cache
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.AssemblyInfo.cs
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.csproj.CoreCompileInputs.cache
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.dll
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\ref\Dinner.Contracts.dll
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\Dinner.Contracts.pdb
+G:\workspace\DDD\Dinner\Dinner.Contracts\obj\Debug\net6.0\refint\Dinner.Contracts.dll

@@ -1,0 +1,4 @@
+@host = https://localhost:7126
+
+Get  {{host}}/Dinner
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDMxYTg2Ni1iNzZiLTQ1NjEtYWY4My03M2QxMTQ0Y2QxNDAiLCJnaXZlbl9uYW1lIjoicmVtIiwiZmFtaWx5X25hbWUiOiJicmkiLCJqdGkiOiIyNTAwODU1Ny1kNzZkLTRkZDItYjE0Mi1lNDY2MTZmMTViZmYiLCJleHAiOjE2OTg0OTkxNjQsImlzcyI6IkRpbm5lciIsImF1ZCI6IkRpbm5lciJ9.C9i-I1D0ZseUJkem1kMGXr8b1DSvYsXtaCcTq-W_oFM
