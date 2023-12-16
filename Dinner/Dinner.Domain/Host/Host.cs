@@ -9,7 +9,7 @@ using Dinner.Domain.User.ValueObjects;
 namespace Dinner.Domain.Host;
 
 
-public sealed class Host : AggregateRoot<HostId>
+public sealed class Host : AggregateRoot<HostId, string>
 {
    
     private readonly List<DinnerId> _dinnerIds = new();

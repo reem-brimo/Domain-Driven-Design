@@ -9,7 +9,7 @@ using Dinner.Domain.Common.ValueObjects;
 namespace Dinner.Domain.MenuAggregate;
 
 
-public sealed class Menu : AggregateRoot<MenuId>
+public sealed class Menu : AggregateRoot<MenuId, Guid>
 {
     private readonly List<MenuSection> _sections = new();
 

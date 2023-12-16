@@ -7,7 +7,7 @@ using Dinner.Domain.User.ValueObjects;
 using Dinner.Domain.Guest.Entities;
 
 namespace Dinner.Domain.Guest;
-public sealed class Guest : AggregateRoot<GuestId>
+public sealed class Guest : AggregateRoot<GuestId, Guid>
 {
     private readonly List<DinnerId> _upcomingDinnerIds = new();
 

@@ -8,7 +8,7 @@ using Dinner.Domain.Common.Models;
 namespace Dinner.Domain.Menu;
 
 
-public sealed class Dinner : AggregateRoot<DinnerId>
+public sealed class Dinner : AggregateRoot<DinnerId, Guid>
 {
     private readonly List<DinnerReservation> _Reservations = new();
     public string Name { get; set; }

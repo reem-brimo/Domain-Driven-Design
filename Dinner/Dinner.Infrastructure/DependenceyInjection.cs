@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Dinner.Application.Common.interfaces.Presistence;
 using Dinner.Infrastructure.Presistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens;*
 using Microsoft.Extensions.Options;
 using System.Text;
 using Dinner.Infrastructure.Presistence.Repositories;

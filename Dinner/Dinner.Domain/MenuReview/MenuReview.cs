@@ -6,7 +6,7 @@ using Dinner.Domain.Guest.ValueObjects;
 namespace Dinner.Domain.Menu;
 
 
-public sealed class MenuReview : AggregateRoot<MenuReviewId>
+public sealed class MenuReview : AggregateRoot<MenuReviewId,Guid>
 {
     public GuestId GuestId { get; set; }
 

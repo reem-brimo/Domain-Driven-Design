@@ -7,7 +7,7 @@ using Dinner.Domain.Guest.ValueObjects;
 namespace Dinner.Domain.Bill;
 
 
-public sealed class Bill : AggregateRoot<BillId>
+public sealed class Bill : AggregateRoot<BillId, Guid>
 {
     public DinnerId DinnerId {get;}
 

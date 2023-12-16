@@ -3,10 +3,10 @@ using Dinner.Domain.Common.Models;
 namespace Dinner.Domain.Host.ValueObjects;
 
 
-public sealed class HostId : ValueObject
+public sealed class HostId : AggregateRootId<string>
 {
 
-    public string Value { get; private set; }
+    public override string Value { get; protected set; }
 
     private HostId(string value)
     {

@@ -3,10 +3,10 @@ using Dinner.Domain.Common.Models;
 namespace Dinner.Domain.MenuAggregate.ValueObjects;
 
 
-public sealed class MenuId : ValueObject
+public sealed class MenuId : AggregateRootId<Guid>
 {
 
-    public Guid Value { get; set; }
+    public override Guid Value { get; protected set; }
 
     private MenuId(Guid value)
     {

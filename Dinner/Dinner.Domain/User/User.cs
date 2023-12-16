@@ -5,7 +5,7 @@ using Dinner.Domain.User.ValueObjects;
 namespace Dinner.Domain.User;
 
 
-public sealed class User : AggregateRoot<UserId>
+public sealed class User : AggregateRoot<UserId, Guid>
 {
    
     public string FirstName { get; set; }
