@@ -1,4 +1,4 @@
-using Dinner.Domain.Dinner.ValueObjects;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
 using Dinner.Domain.MenuReview.ValueObjects;
 using Dinner.Domain.Common.Models;
 using Dinner.Domain.Guest.ValueObjects;
@@ -26,7 +26,6 @@ public sealed class Guest : AggregateRoot<GuestId, Guid>
 
     public string LastName { get; set; }
 
-    public string ProfileImage { get; set; }
         
     public UserId UserId {get;}
     
@@ -37,11 +36,12 @@ public sealed class Guest : AggregateRoot<GuestId, Guid>
 
     public IReadOnlyList<DinnerId> UpcomingDinnerIds => _upcomingDinnerIds.AsReadOnly();
 
-    public IReadOnlyList<DinnerId> PastDinnerId => _pastDinnerIds.AsReadOnly();
+    public IReadOnlyList<DinnerId> PastDinnerIds => _pastDinnerIds.AsReadOnly();
         
     public IReadOnlyList<DinnerId> PendingDinnerIds => _pendingDinnerIds.AsReadOnly();
 
     public IReadOnlyList<MenuReviewId> MenuReviewIds => _menuReviewIds.AsReadOnly();
+    public IReadOnlyList<BillId> BillIds => _billIds.AsReadOnly();
 
     public IReadOnlyList<GuestRating> Ratings => _ratings.AsReadOnly();
 
@@ -49,7 +49,6 @@ public sealed class Guest : AggregateRoot<GuestId, Guid>
         GuestId guestId,
         string firstName,
         string lastName,
-        string profileImage,
         UserId userId,
         DateTime createdDateTime,
         DateTime updatedDateTime) 
@@ -57,7 +56,6 @@ public sealed class Guest : AggregateRoot<GuestId, Guid>
         {
             FirstName = firstName;
             LastName = lastName;
-            ProfileImage = profileImage;
             UserId = userId;
             CreatedDateTime = createdDateTime;
             UpdatedDateTime = updatedDateTime;
@@ -72,9 +70,14 @@ public sealed class Guest : AggregateRoot<GuestId, Guid>
         return new(GuestId.CreateUnique(),
         firstName,
         lastName,
-        profileImage,
         userId,
         DateTime.UtcNow,
         DateTime.UtcNow);
     }
+
+#pragma warning disable CS8618
+    private Guest(){
+
+    }
+#pragma warning restore CS8618
 }

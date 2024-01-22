@@ -1,5 +1,5 @@
 using Dinner.Domain.Bill.ValueObjects;
-using Dinner.Domain.Dinner.ValueObjects;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
 using Dinner.Domain.Common.Models;
 using Dinner.Domain.Host.ValueObjects;
 using Dinner.Domain.Guest.ValueObjects;
@@ -28,7 +28,6 @@ public sealed class Bill : AggregateRoot<BillId, Guid>
         DateTime updatedDateTime) 
         : base(billId)
         {
-        
             DinnerId = dinnerId;
             GuestId = guestId;
             HostId = hostId;
@@ -48,6 +47,12 @@ public sealed class Bill : AggregateRoot<BillId, Guid>
         DateTime.UtcNow,
         DateTime.UtcNow);
     }
+
+#pragma warning disable CS8618
+    private Bill(){
+
+    }
+#pragma warning restore CS8618
 
 
 }

@@ -17,6 +17,10 @@ public sealed class MenuReviewId : AggregateRootId<Guid>
         return new(Guid.NewGuid());
     }
 
+        public static MenuReviewId CreateValue(Guid value)
+    {
+        return new MenuReviewId(value);
+    }
     public override IEnumerable<object> GetEqualityComponents(){
 
         yield return Value;

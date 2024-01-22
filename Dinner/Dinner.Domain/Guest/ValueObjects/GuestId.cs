@@ -17,7 +17,10 @@ public sealed class GuestId : AggregateRootId<Guid>
     {
         return new(Guid.NewGuid());
     }
-
+    public static GuestId CreateValue(Guid value)
+    {
+        return new GuestId(value);
+    }
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;

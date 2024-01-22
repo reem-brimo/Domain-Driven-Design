@@ -1,10 +1,10 @@
 using Dinner.Domain.Common.Models;
-using Dinner.Domain.Dinner.ValueObjects;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
 using Dinner.Domain.Guest.ValueObjects;
 using Dinner.Domain.Bill.ValueObjects;
 
 
-namespace Dinner.Domain.Dinner.Entities;
+namespace Dinner.Domain.DinnerAggregate.Entities;
 
 
 public sealed class DinnerReservation : Entity<DinnerReservationId>
@@ -13,7 +13,7 @@ public sealed class DinnerReservation : Entity<DinnerReservationId>
 
     public int GuestsCount { get; set; }
 
-    public GuestId GuestID { get; set; }
+    public GuestId GuestId { get; set; }
 
     public BillId BillId { get; set; }
 
@@ -35,7 +35,7 @@ public sealed class DinnerReservation : Entity<DinnerReservationId>
         : base(reservationId)
     {
         GuestsCount = guestsCount;
-        GuestID = guestId;
+        GuestId = guestId;
         BillId = billId;
         ArraivalTime = arraivalTime;
         CreatedDateTime = createdDateTime;
@@ -58,4 +58,11 @@ public sealed class DinnerReservation : Entity<DinnerReservationId>
             createdDateTime,
             updatedDateTime);
     }
+    
+#pragma warning disable CS8618
+    private DinnerReservation(){
+
+    }
+#pragma warning restore CS8618
+
 }

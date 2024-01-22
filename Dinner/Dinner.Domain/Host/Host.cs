@@ -1,7 +1,5 @@
 using Dinner.Domain.MenuAggregate.ValueObjects;
-using Dinner.Domain.MenuAggregate.Entities;
-using Dinner.Domain.Dinner.ValueObjects;
-using Dinner.Domain.MenuReview.ValueObjects;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
 using Dinner.Domain.Common.Models;
 using Dinner.Domain.Host.ValueObjects;
 using Dinner.Domain.User.ValueObjects;

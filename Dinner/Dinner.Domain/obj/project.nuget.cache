@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fhzMj4OXVhbsAVJyIWpWlY3+xQugtP4nb5duZ87GUD3v/KV6gQjd8vEyGI1Wf95ImxbhahuhdF79ijynrMVo0w==",
+  "dgSpecHash": "DZcT1O11X0CUbp8w4pLeQn1qhV2pfB/HuUQlcbFQQMfEQ+HSngkwDbYhlmz83OGTq/MynQ+pzoNlnrBb+1Emow==",
   "success": true,
   "projectFilePath": "G:\\workspace\\DDD\\Dinner\\Dinner.Domain\\Dinner.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\reemb\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512"
+    "C:\\Users\\reemb\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

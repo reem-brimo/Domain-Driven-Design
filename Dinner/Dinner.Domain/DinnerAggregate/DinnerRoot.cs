@@ -1,14 +1,14 @@
 using Dinner.Domain.MenuAggregate.ValueObjects;
 using Dinner.Domain.Host.ValueObjects;
-using Dinner.Domain.Dinner.ValueObjects;
-using Dinner.Domain.Dinner.Entities;
-using Dinner.Domain.Dinner.Enums;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
+using Dinner.Domain.DinnerAggregate.Entities;
+using Dinner.Domain.DinnerAggregate.Enums;
 using Dinner.Domain.Common.Models;
 
-namespace Dinner.Domain.Menu;
+namespace Dinner.Domain.DinnerAggregate;
 
 
-public sealed class Dinner : AggregateRoot<DinnerId, Guid>
+public sealed class DinnerRoot : AggregateRoot<DinnerId, string>
 {
     private readonly List<DinnerReservation> _Reservations = new();
     public string Name { get; set; }
@@ -36,7 +36,7 @@ public sealed class Dinner : AggregateRoot<DinnerId, Guid>
     
     public DateTime UpdatedDateTime {get;}
 
-    private Dinner(
+    private DinnerRoot(
         DinnerId dinnerId,
         MenuId menuId,
         string name,
@@ -70,7 +70,7 @@ public sealed class Dinner : AggregateRoot<DinnerId, Guid>
             UpdatedDateTime = updatedDateTime;
         }
 
-    public static Dinner Create(string name,
+    public static DinnerRoot Create(string name,
         MenuId menuId,
         string description,
         HostId hostId,
@@ -101,5 +101,11 @@ public sealed class Dinner : AggregateRoot<DinnerId, Guid>
         DateTime.UtcNow);
     }
 
+#pragma warning disable CS8618
+    private DinnerRoot()
+    {
+
+    }
+#pragma warning restore CS8618
 
 }

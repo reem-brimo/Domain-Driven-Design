@@ -7,12 +7,12 @@ using Microsoft.Extensions.Configuration;
 using Dinner.Application.Common.interfaces.Presistence;
 using Dinner.Infrastructure.Presistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;*
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Options;
 using System.Text;
 using Dinner.Infrastructure.Presistence.Repositories;
 using Microsoft.EntityFrameworkCore;
-
+using Dinner.Infrastructure.Presistence.interceptors;
 
 namespace Dinner.Infrastructure;
 
@@ -38,6 +38,9 @@ public static class DependenceyInjection{
      ConfigurationManager configuration)
     {
     services.AddDbContext<DinnerDbContext>(options => options.UseSqlServer("Server=RB;Database=Dinner;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;Integrated Security=True"));
+    
+    services.AddScoped<PublishDomainEventsInterceptor>();
+
     services.AddScoped<IUserRepository, UserRepository>();
     services.AddScoped<IMenuRepository, MenuRepository>();
 

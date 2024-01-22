@@ -3,7 +3,7 @@ using Dinner.Domain.Common.Models;
 using Dinner.Domain.Host.ValueObjects;
 using Dinner.Domain.Guest.ValueObjects;
 
-namespace Dinner.Domain.Menu;
+namespace Dinner.Domain.MenuReview;
 
 
 public sealed class MenuReview : AggregateRoot<MenuReviewId,Guid>
@@ -33,6 +33,14 @@ public sealed class MenuReview : AggregateRoot<MenuReviewId,Guid>
             CreatedDateTime = createdDateTime;
             UpdatedDateTime = updatedDateTime;
         }
+
+#pragma warning disable CS8618
+    private MenuReview()
+    {
+
+    } 
+#pragma warning restore CS8618
+
 
     public static MenuReview Create(GuestId guestId, HostId hostId, string description)
     {

@@ -35,20 +35,19 @@ public class MenuConfiguration : IEntityTypeConfiguration<Menu>
         .SetPropertyAccessMode(PropertyAccessMode.Field);
     }
 
-    private void ConfigureMenuDinnerIdsTable(EntityTypeBuilder<Menu> builder)
-    {
+    private void ConfigureMenuDinnerIdsTable(EntityTypeBuilder<Menu> builder) {
       builder.OwnsMany(m => m.DinnerIds, dib => {
             dib.ToTable("MenuDinnerIds");
 
             dib.WithOwner().HasForeignKey("MenuId");
+
 
             dib.HasKey("Id");
 
             dib.Property( d => d.Value)
             .HasColumnName("DinnerId")
             .ValueGeneratedNever();
-        });
-        
+        });        
         builder.Metadata.FindNavigation(nameof(Menu.DinnerIds))!
         .SetPropertyAccessMode(PropertyAccessMode.Field);
     }

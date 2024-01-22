@@ -1,17 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "j6myEx3eCIk/xnh6cfnp5+krNHrTEK4D1rFO0i1TuTJUogCdbz2ghBizU/KZoWH8gyN3n/nwpCbPNSa1F4Lh+Q==",
-  "success": true,
+  "dgSpecHash": "Fw50A2FerCK7/HhEM6voGg7IkYYjAPcX4vlaVuRthh+YqP1kjAf1QsOXndBXtLk9+PaHY76jQdZcXVMumSLRgQ==",
+  "success": false,
   "projectFilePath": "G:\\workspace\\DDD\\Dinner\\Dinner.Application\\Dinner.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reemb\\.nuget\\packages\\erroror\\1.2.1\\erroror.1.2.1.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.0.0\\mediatr.12.0.0.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.0\\mediatr.contracts.2.0.0.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.Extensions.DependencyInjection.Abstractions from 8.0.0 to 7.0.0. Reference the package directly from the project to select a different version. \r\n Dinner.Application -> MediatR 12.2.0 -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 8.0.0) \r\n Dinner.Application -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 7.0.0)",
+      "libraryId": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

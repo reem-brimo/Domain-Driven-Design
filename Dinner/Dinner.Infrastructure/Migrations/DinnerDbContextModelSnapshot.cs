@@ -22,6 +22,118 @@ namespace Dinner.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Dinner.Domain.Bill.Bill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DinnerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("GuestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("HostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bills", (string)null);
+                });
+
+            modelBuilder.Entity("Dinner.Domain.DinnerAggregate.DinnerRoot", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("DinnerStatus")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("HostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Location")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaxGuests")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("MenuId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dinners", (string)null);
+                });
+
+            modelBuilder.Entity("Dinner.Domain.Guest.Guest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Guests", (string)null);
+                });
+
+            modelBuilder.Entity("Dinner.Domain.Host.Host", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("UpdatedDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Hosts", (string)null);
+                });
+
             modelBuilder.Entity("Dinner.Domain.MenuAggregate.Menu", b =>
                 {
                     b.Property<Guid>("Id")
@@ -52,6 +164,318 @@ namespace Dinner.Infrastructure.Migrations
                     b.ToTable("Menus", (string)null);
                 });
 
+            modelBuilder.Entity("Dinner.Domain.MenuReview.MenuReview", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("GuestId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("HostId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MenuReviews", (string)null);
+                });
+
+            modelBuilder.Entity("Dinner.Domain.User.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("Dinner.Domain.DinnerAggregate.DinnerRoot", b =>
+                {
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.Entities.DinnerReservation", "Reservations", b1 =>
+                        {
+                            b1.Property<string>("Id")
+                                .HasColumnType("nvarchar(450)")
+                                .HasColumnName("DinnerReservationId");
+
+                            b1.Property<string>("DinnerId")
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<Guid>("BillId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<int>("GuestsCount")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id", "DinnerId");
+
+                            b1.HasIndex("DinnerId");
+
+                            b1.ToTable("DinnerReservations", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("DinnerId");
+                        });
+
+                    b.Navigation("Reservations");
+                });
+
+            modelBuilder.Entity("Dinner.Domain.Guest.Guest", b =>
+                {
+                    b.OwnsMany("Dinner.Domain.Bill.ValueObjects.BillId", "BillIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("BillId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestBills", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.Guest.Entities.GuestRating", "Ratings", b1 =>
+                        {
+                            b1.Property<Guid>("Id")
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("GuestRatingId");
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("DinnerId")
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<string>("HostId")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.Property<int>("Rate")
+                                .HasColumnType("int");
+
+                            b1.HasKey("Id", "GuestId", "DinnerId");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestRatings", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.MenuReview.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("MenuReviewIds");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestMenuReviews", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.ValueObjects.DinnerId", "PastDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestPastDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.ValueObjects.DinnerId", "PendingDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestPendingDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.ValueObjects.DinnerId", "UpcomingDinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("GuestId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("GuestId");
+
+                            b1.ToTable("GuestUpcomingDinners", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("GuestId");
+                        });
+
+                    b.Navigation("BillIds");
+
+                    b.Navigation("MenuReviewIds");
+
+                    b.Navigation("PastDinnerIds");
+
+                    b.Navigation("PendingDinnerIds");
+
+                    b.Navigation("Ratings");
+
+                    b.Navigation("UpcomingDinnerIds");
+                });
+
+            modelBuilder.Entity("Dinner.Domain.Host.Host", b =>
+                {
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.ValueObjects.DinnerId", "DinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<string>("HostId")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("HostDinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("HostId");
+
+                            b1.ToTable("HostDinnerIds", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("HostId");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.MenuAggregate.ValueObjects.MenuId", "MenuIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<string>("HostId")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(450)");
+
+                            b1.Property<Guid>("Value")
+                                .HasColumnType("uniqueidentifier")
+                                .HasColumnName("HostMenuId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("HostId");
+
+                            b1.ToTable("HostMenuIds", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("HostId");
+                        });
+
+                    b.Navigation("DinnerIds");
+
+                    b.Navigation("MenuIds");
+                });
+
             modelBuilder.Entity("Dinner.Domain.MenuAggregate.Menu", b =>
                 {
                     b.OwnsOne("Dinner.Domain.Common.ValueObjects.AverageRating", "AverageRating", b1 =>
@@ -68,31 +492,6 @@ namespace Dinner.Infrastructure.Migrations
                             b1.HasKey("MenuId");
 
                             b1.ToTable("Menus");
-
-                            b1.WithOwner()
-                                .HasForeignKey("MenuId");
-                        });
-
-                    b.OwnsMany("Dinner.Domain.Dinner.ValueObjects.DinnerId", "DinnerIds", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int");
-
-                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
-
-                            b1.Property<Guid>("MenuId")
-                                .HasColumnType("uniqueidentifier");
-
-                            b1.Property<Guid>("Value")
-                                .HasColumnType("uniqueidentifier")
-                                .HasColumnName("DinnerId");
-
-                            b1.HasKey("Id");
-
-                            b1.HasIndex("MenuId");
-
-                            b1.ToTable("MenuDinnerIds", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("MenuId");
@@ -165,6 +564,32 @@ namespace Dinner.Infrastructure.Migrations
                                 });
 
                             b1.Navigation("Items");
+                        });
+
+                    b.OwnsMany("Dinner.Domain.DinnerAggregate.ValueObjects.DinnerId", "DinnerIds", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            SqlServerPropertyBuilderExtensions.UseIdentityColumn(b1.Property<int>("Id"));
+
+                            b1.Property<Guid>("MenuId")
+                                .HasColumnType("uniqueidentifier");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("DinnerId");
+
+                            b1.HasKey("Id");
+
+                            b1.HasIndex("MenuId");
+
+                            b1.ToTable("MenuDinnerIds", (string)null);
+
+                            b1.WithOwner()
+                                .HasForeignKey("MenuId");
                         });
 
                     b.OwnsMany("Dinner.Domain.MenuReview.ValueObjects.MenuReviewId", "MenuReviewIds", b1 =>

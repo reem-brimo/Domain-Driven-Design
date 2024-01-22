@@ -1,10 +1,11 @@
 using Dinner.Domain.MenuAggregate.ValueObjects;
 using Dinner.Domain.MenuAggregate.Entities;
-using Dinner.Domain.Dinner.ValueObjects;
+using Dinner.Domain.DinnerAggregate.ValueObjects;
 using Dinner.Domain.MenuReview.ValueObjects;
 using Dinner.Domain.Common.Models;
 using Dinner.Domain.Host.ValueObjects;
 using Dinner.Domain.Common.ValueObjects;
+using Dinner.Domain.MenuAggregate.Events;
 
 namespace Dinner.Domain.MenuAggregate;
 
@@ -69,6 +70,7 @@ public sealed class Menu : AggregateRoot<MenuId, Guid>
 
         menu._sections.AddRange(sections);
 
+        menu.AddDomainEvent(new MenuCreated(menu));
         return menu;
     }
 

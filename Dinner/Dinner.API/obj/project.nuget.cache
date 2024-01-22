@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "6AVxVJVmGql7JOCEKU5AQxhj5CPRmErshLcXo3OlmGsQ4kfDXOSbJRjEZQEPRIUd28CrXRv1uAg3rhV1vH2Z4Q==",
-  "success": true,
+  "dgSpecHash": "hTkGUZ7di57pbEGz9w7IIdTfwRc3STytglztTrSBKMFEudR052i88AxD6CmKBRtoKxwnulOLuk9lx91DNmhRnQ==",
+  "success": false,
   "projectFilePath": "G:\\workspace\\DDD\\Dinner\\Dinner.API\\Dinner.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\reemb\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -14,10 +14,10 @@
     "C:\\Users\\reemb\\.nuget\\packages\\mapster\\7.3.0\\mapster.7.3.0.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\mapster.dependencyinjection\\1.0.0\\mapster.dependencyinjection.1.0.0.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.0.0\\mediatr.12.0.0.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.0\\mediatr.contracts.2.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.4\\microsoft.aspnetcore.authentication.jwtbearer.6.0.4.nupkg.sha512",
-    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
+    "C:\\Users\\reemb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
@@ -87,5 +87,15 @@
     "C:\\Users\\reemb\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\reemb\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Detected package downgrade: Microsoft.Extensions.DependencyInjection.Abstractions from 8.0.0 to 7.0.0. Reference the package directly from the project to select a different version. \r\n Dinner.API -> Dinner.Application -> MediatR 12.2.0 -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 8.0.0) \r\n Dinner.API -> Dinner.Application -> Microsoft.Extensions.DependencyInjection.Abstractions (>= 7.0.0)",
+      "libraryId": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
