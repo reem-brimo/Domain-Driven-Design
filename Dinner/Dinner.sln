@@ -1,23 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinner.API", "Dinner.API\Dinner.API.csproj", "{170D42FA-F66D-4B81-89C9-43EAD9BB6349}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dinner.API", "Dinner.API\Dinner.API.csproj", "{170D42FA-F66D-4B81-89C9-43EAD9BB6349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinner.Application", "Dinner.Application\Dinner.Application.csproj", "{4CBE5582-D344-41F1-A3FD-AD942327BF43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dinner.Application", "Dinner.Application\Dinner.Application.csproj", "{4CBE5582-D344-41F1-A3FD-AD942327BF43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinner.Contracts", "Dinner.Contracts\Dinner.Contracts.csproj", "{0150B2EC-1923-4011-AE8F-3D8FF7F00509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dinner.Contracts", "Dinner.Contracts\Dinner.Contracts.csproj", "{0150B2EC-1923-4011-AE8F-3D8FF7F00509}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dinner.Domain", "Dinner.Domain\Dinner.Domain.csproj", "{BF45FC07-1E81-44BF-B86C-5FDC9FCA07F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dinner.Domain", "Dinner.Domain\Dinner.Domain.csproj", "{BF45FC07-1E81-44BF-B86C-5FDC9FCA07F3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dinner.Infrastructure", "Dinner.Infrastructure\Dinner.Infrastructure.csproj", "{4A684BCE-1E77-4DEA-ACA6-DECEDFA80739}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{170D42FA-F66D-4B81-89C9-43EAD9BB6349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,5 +35,15 @@ Global
 		{BF45FC07-1E81-44BF-B86C-5FDC9FCA07F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF45FC07-1E81-44BF-B86C-5FDC9FCA07F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF45FC07-1E81-44BF-B86C-5FDC9FCA07F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A684BCE-1E77-4DEA-ACA6-DECEDFA80739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A684BCE-1E77-4DEA-ACA6-DECEDFA80739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A684BCE-1E77-4DEA-ACA6-DECEDFA80739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A684BCE-1E77-4DEA-ACA6-DECEDFA80739}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {221A0057-7294-4DFA-9230-EEFF0441C130}
 	EndGlobalSection
 EndGlobal
